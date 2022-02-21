@@ -1,0 +1,14 @@
+.card {
+  /* height: 45rem; */
+  margin-bottom: 20px;
+}
+/* @media only screen and (max-width: 700px) {
+  .card {
+    height: 110rem;
+  }
+}
+@media (min-width: 700px) and (max-width: 1200px) {
+  .card {
+    height: 70rem;
+  }
+} */
