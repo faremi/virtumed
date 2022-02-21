@@ -1,10 +1,19 @@
+import Image from "next/image";
 import styles from "../../styles/About.module.css";
-
+import image from "../../public/doctor_image.jpg";
 function AboutUsBody() {
   return (
     <section className="lg:mx-40">
       <div className="pt-32  mb-10">
-        <img className="w-full rounded-lg" src="/../../doctor_image.jpg"></img>
+        {/* <div className="w-full rounded-lg"> */}
+        <Image
+          className="w-full rounded-lg"
+          src={image}
+          layout="responsive"
+          alt="image"
+        />
+        {/* </div> */}
+        {/* <img  src="/../../doctor_image.jpg"></img> */}
       </div>
       <div className="flex mb-10">
         Culpa esse architecto ad earum ut iusto mollitia omnis. Ratione
