@@ -1,7 +1,9 @@
 import Image from "next/image";
 import styles from "../../styles/About.module.css";
 import image from "../../public/doctor_image.jpg";
-function AboutUsBody() {
+import image1 from "../../public/item1.jpeg";
+
+function AboutUsBody(props) {
   return (
     <section className="lg:mx-40">
       <div className="pt-32  mb-10">
@@ -47,11 +49,12 @@ function AboutUsBody() {
       <h1 className="text-teal-700 text-3xl mb-4">Our Values</h1>
       <div className={styles.containerWrap}>
         <div className={styles.containerImage}>
-          <img
-            alt="imagess"
-            className="w-full mb-10 mt-10 rounded-2xl"
-            src="/../../item1.jpeg"
-          ></img>
+          <Image
+            className="w-full mb-10 mt-10 rounded-2xl h-full"
+            src={image1}
+            alt="ima111ge"
+          />
+          {/* <img alt="imagess" className="" src="/../../item1.jpeg"></img> */}
         </div>
         <div className="">
           <div className="flex mb-4 align-middle">
