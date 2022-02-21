@@ -39,6 +39,7 @@ function AboutUsBody() {
       <div className={styles.containerWrap}>
         <div className={styles.containerImage}>
           <img
+            alt="imagess"
             className="w-full mb-10 mt-10 rounded-2xl"
             src="/../../item1.jpeg"
           ></img>

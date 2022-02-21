@@ -27,7 +27,11 @@ function HomeBody() {
         </div>
 
         <div className={styles.col2}>
-          <img src="/../doctor.png" className={styles.imageController}></img>
+          <img
+            alt="imagesssss"
+            src="/../doctor.png"
+            className={styles.imageController}
+          ></img>
         </div>
       </div>
     </section>

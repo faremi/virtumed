@@ -90,7 +90,7 @@ function PatientRegistrationForm(params) {
               <div className={styles.inputBox}>
                 <label
                   className=" text-2xl inline-flex items-center"
-                  for="gender"
+                  htmlFor="gender"
                 >
                   Designated Gender At Birth
                 </label>
@@ -104,7 +104,7 @@ function PatientRegistrationForm(params) {
                 />
                 <label
                   className="ml-2 text-xl inline-flex items-center mr-4"
-                  for="male"
+                  fohtmlFor="male"
                 >
                   Male
                 </label>
@@ -117,7 +117,7 @@ function PatientRegistrationForm(params) {
                 />
                 <label
                   className="ml-2 text-xl inline-flex items-center"
-                  for="fmale"
+                  htmlFor="fmale"
                 >
                   Female
                 </label>
