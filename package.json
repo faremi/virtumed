@@ -5,10 +5,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tail":"npx tailwindcss -i ./styles/globals.css -o ./styles/output.css --watch"
   },
   "dependencies": {
-    "@headlessui/react": "^1.4.3",
+    "@headlessui/react": "^1.5.0",
     "@heroicons/react": "^1.0.5",
     "next": "^12.1.0",
     "react": "17.0.2",
