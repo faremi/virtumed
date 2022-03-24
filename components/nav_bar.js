@@ -191,7 +191,7 @@ function Navbar(props) {
                 </Link> */}
 
                 <Link
-                  href="/contact"
+                  href="/admin"
                   activeClass="Patient"
                   to="Patient"
                   smooth={true}
