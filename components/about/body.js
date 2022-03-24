@@ -5,7 +5,7 @@ import image1 from "../../public/item1.jpeg";
 
 function AboutUsBody(props) {
   return (
-    <section className="lg:mx-40">
+    <section className="lg:mx-40 font-sans">
       <div className="pt-32  mb-10">
         {/* <div className="w-full rounded-lg"> */}
         <Image

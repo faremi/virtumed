@@ -1,8 +1,8 @@
 import styles from "../styles/HomeBody.module.css";
 function HomeBody() {
   return (
-    <section>
-      <div className="items-center  pt-10 justify-center  "></div>
+    <section className="font-sans">
+      <div className="items-center font-sans pt-10 justify-center  "></div>
       <div className="flex justify-center align-middle my-14  lg:mx-28 flex-col-reverse lg:flex-row xl:flex-row md:flex-row">
         <div className={styles.col1}>
           <p className={styles.topTitle}> -------- ex sit libero</p>

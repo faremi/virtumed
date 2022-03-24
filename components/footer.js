@@ -3,7 +3,7 @@ import styles from "../styles/Footers.module.css";
 
 function Footers(params) {
   return (
-    <div className="xl:mx-40 flex -space-y-10">
+    <div className="xl:mx-40 flex font-sans -space-y-10">
       <footer className="text-center lg:text-left bg-teal-50 text-gray-600">
         <div className="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
           <div className="mr-12 hidden lg:block">

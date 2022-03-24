@@ -4,7 +4,7 @@ import { ChevronDownIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 export default function DoctorDropDown() {
   return (
-    <div className="hover:bg-teal-600 hover:rounded-md ">
+    <div className="hover:bg-teal-600 hover:rounded-md font-sans ">
       <Menu as="div" className="relative inline-block text-left">
         <div>
           <Menu.Button className="inline-flex justify-center hover:text-white  text-black w-full  px-3 py-2 rounded-md text-basefont-medium  bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">

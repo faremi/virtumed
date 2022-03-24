@@ -1,7 +1,7 @@
 import styles from "../../styles/Form.module.css";
 function DoctorForm(params) {
   return (
-    <div className="flex justify-center align-middle p-10 bg-gradient-to-r  from-teal-200 to-cyan-200 mb-20 mt-10 lg:mx-40">
+    <div className="flex justify-center font-sans align-middle p-10 bg-gradient-to-r  from-teal-200 to-cyan-200 mb-20 mt-10 lg:mx-40">
       <div className="container bg-white px-4 lg:px-16 md:px-12 xl:px-20 rounded-lg py-16">
         <div className="text-3xl font-bold mb-5">Registration</div>
         <p

@@ -12,7 +12,7 @@ function Navbar(props) {
 
   return (
     <div className="">
-      <nav className="shadow-sm fixed w-full z-10 ">
+      <nav className="shadow-sm fixed w-full z-10 font-sans">
         <div className="w-full">
           <div className="flex items-center h-20 w-full ">
             <div className="flex items-center justify-between w-full">

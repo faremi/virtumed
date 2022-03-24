@@ -2,7 +2,7 @@ import styles from "../styles/ItemList.module.css";
 
 function ItemList(params) {
   return (
-    <section className="xl:mx-40 ">
+    <section className="xl:mx-40 font-sans">
       <div className={styles.card}>
         <div className="grid grid-1 md:grid-cols-2 lg:grid-cols-3 gap-8 h-full text-center">
           <div className="flex flex-col relative h-full bg-teal-50">
