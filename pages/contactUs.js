@@ -1,70 +1,105 @@
+import {
+  MailIcon,
+  LocationMarkerIcon,
+  PhoneIcon,
+} from "@heroicons/react/solid";
+
 export default function ContactUs(params) {
   return (
     <section className="bg-gradient-to-r from-teal-300 to-cyan-500 w-full flex min-h-screen font-sans align-middle">
-      <div className="m-auto w-4/5 bg-white border rounded-md p-7 md:p-10">
-        <div className="flex justify-center space-x-6">
-          <div className="relative w-20 h-full flex flex-col align-middle justify-center mt-10 before:absolute before:content-none before:h-3/4 before:w-3 before:-right-5 before:top-1/2 before:bg-gray-400">
-            <div className="address m-10 text-center">
-              <em className="fas fa-map-marker-alt  text-2xl text-teal-600 mt-3"></em>
-              <div className=" ">Address</div>
-              <div className="t1">Kwaluseni M15</div>
-              <div className="t2">Manzini</div>
-            </div>
-            <div className="phone m-10 text-center details">
-              <em className="fas fa-phone-alt  text-2xl text-teal-600 mt-3"></em>
-              <div className="topic">Phone</div>
-              <div className="t1">+268 123 456</div>
-              <div className="t2">+268 2404 1234</div>
-            </div>
-            <div className="email m-10 text-center details">
-              <em className="fas fa-envelope  text-2xl text-teal-600 mt-3"></em>
-              <div className="topic">Email</div>
-              <div className="t1">
-                <a href="#">virtumed@gmail.com</a>
-              </div>
-              <div className="t2">
-                <a href="#">info.virtustuff@gmail.com</a>
-              </div>
-            </div>
-          </div>
-          <div className="right">
-            <div className="topic-text">Contact us</div>
-            <p>
-              How can we help you? If you have questions about our medical
-              services, please send us a message
-            </p>
-            <form action="#">
-              <div className="input-box">
-                <input
-                  type="text"
-                  id="name"
-                  placeholder="Please enter your name"
-                  required
-                />
-              </div>
-              <div className="input-box">
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="Please enter your email address"
-                  required
-                />
-              </div>
-              <div className="input-box message-box">
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder="Enter query here"
-                  required
-                ></textarea>
-              </div>
-              <div className="button">
-                <input type="button" value="Send Message" />
-              </div>
-            </form>
-          </div>
-        </div>
+      <div className="my-9 md:m-auto m-auto w-4/5 bg-white border rounded-md p-4 md:p-10 flex flex-col-reverse md:flex-row">
+        <ContactAddressInfo />
+        <FormBar />
       </div>
     </section>
+  );
+}
+
+function LabelBar({ title, subTitle, description, image }) {
+  return (
+    <div className="m-auto text-center my-4 flex flex-col">
+      {image}
+      <div className="text-xl md:text-2xl">{title}</div>
+      <div className="text-sm md:text-md text-gray-600">{subTitle}</div>
+      <div className="text-sm md:text-md text-gray-500">{description}</div>
+    </div>
+  );
+}
+
+function MailCustomIcon() {
+  return (
+    <MailIcon className="max-h-6 w-6 text-gray-600 mb-2 mx-auto"></MailIcon>
+  );
+}
+
+function MapCustomIcon() {
+  return (
+    <LocationMarkerIcon className="max-h-6 w-6 text-gray-600 mb-2 mx-auto"></LocationMarkerIcon>
+  );
+}
+
+function ContactAddressInfo() {
+  return (
+    <div className="flex my-auto flex-row flex-wrap md:flex-col w-full md:w-1/3 h-full align-middle">
+      <LabelBar
+        title="Address"
+        subTitle="Kwaluseni M15"
+        description="Manzini"
+        image={<MapCustomIcon />}
+      />
+      <LabelBar
+        title="Phone"
+        subTitle="+268 123 456"
+        description="+268 2404 1234"
+        image={
+          <PhoneIcon className="max-h-6 w-6 text-gray-600 mb-2 mx-auto"></PhoneIcon>
+        }
+      />
+
+      <LabelBar
+        title="Email"
+        subTitle="virtumed@gmail.com"
+        description="info.virtustuff@gmail.com"
+        image={<MailCustomIcon />}
+      />
+    </div>
+  );
+}
+
+function FormBar() {
+  return (
+    <div className="flex flex-col w-full md:w-2/3 h-full">
+      <div className="w-full">
+        <div className="mb-1 text-teal-500 text-2xl md:text-3xl">
+          Contact us
+        </div>
+        <p className="my-3 text-gray-600 text-sm md:text-md">
+          How can we help you? If you have questions about our medical services,
+          please send us a message
+        </p>
+        <form action="">
+          <input
+            className="my-2  bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+            id="inline-full-name"
+            type="text"
+            value="Jane"
+          />
+          <input
+            className="my-2 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+            id="inline-full-name"
+            type="text"
+            value="Jane"
+          />{" "}
+          <textarea
+            className="h-52 md:h-72 my-2 bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-4 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+            id="inline-full-name"
+            type="text"
+          />
+        </form>
+        <div className="bg-gradient-to-r from-teal-300 to-cyan-500 hover:bg-gradient-to-r hover:from-teal-500 hover:to-cyan-500 text-white font-bold py-2 px-4 rounded text-center">
+          <input type="submit" value="Login" />
+        </div>
+      </div>
+    </div>
   );
 }

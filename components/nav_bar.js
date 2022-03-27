@@ -59,7 +59,7 @@ function Navbar(props) {
                   <DoctorDropDown />
 
                   <Link
-                    href="/admin"
+                    href="/contactUs"
                     activeClass="contact"
                     to="contact"
                     smooth={true}
