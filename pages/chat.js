@@ -1,1 +1,3 @@
-export default function Chat(params) {}
+export default function Chat(params) {
+  return <section className=""></section>;
+}
