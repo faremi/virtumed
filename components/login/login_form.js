@@ -33,8 +33,8 @@ function LoginForm(params) {
           password: pasword,
         },
       });
+      setError(user.data.users.message);
       console.log(user);
-      setError(user.data.message);
     } catch (e) {
       console.log("Working");
       return setError("Unable to process request");
@@ -43,7 +43,6 @@ function LoginForm(params) {
   return (
     <section className="min-h-screen w-screen flex justify-center  font-sans py-10 px-1  md:p-10 bg-gradient-to-r  from-teal-200 to-cyan-200 ">
       <div className="m-auto bg-white px-4 lg:px-16 md:px-12 xl:px-20 rounded-lg py-16">
-        error
         <div className="text-3xl font-bold mb-5 text-teal-500 ">Login</div>
         <p
           div
@@ -67,6 +66,7 @@ function LoginForm(params) {
                 placeholder="Enter your email address"
               />
             </div>
+            <div className="my-2 text-xl text-red-500">{error}</div>
             <button
               onClick={loginUser}
               type="submit"
