@@ -4,7 +4,7 @@ import Footers from "../components/footer";
 import Navbar from "../components/nav_bar";
 import DoctorForm from "../components/registration/doctor_body";
 import PatientRegistrationForm from "../components/registration/patient_registration_form";
-export default function DoctorRegistration() {
+export default function Registration() {
   return (
     <section>
       <Head>

@@ -1,25 +1,18 @@
 import React, { useState } from "react";
 import { Transition, Menu } from "@headlessui/react";
-// import { Link } from "react-scroll";
 import Image from "next/image";
 import Logo from "../public/logo.png";
 import Link from "next/link";
-import DoctorDropDown from "./doctordropdown";
-import PatientDropDown from "./patientdropdown";
 function Navbar(props) {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDoctorOpen, setIsDoctorOpen] = useState(false);
 
   return (
-    <div className="">
+    <section className="font-sans">
       <nav className="shadow-sm fixed w-full z-10 font-sans">
         <div className="w-full">
           <div className="flex items-center h-20 w-full ">
             <div className="flex items-center justify-between w-full">
               <div className=" xl:ml-40 flex justify-center items-center flex-shrink-0 ">
-                {/* <h1 className=" font-bold text-xl cursor-pointer">
-                  Stream<span className="text-teal-500">line</span>
-                </h1> */}
                 <Image
                   //   loader={myLoader}
                   src={Logo}
@@ -38,7 +31,7 @@ function Navbar(props) {
                     offset={50}
                     duration={500}
                   >
-                    <a className="cursor-pointer text-teal-600 font-semibold px-3 py-2 text-md hover:font-black">
+                    <a className="cursor-pointer text-teal-600 font-medium px-3 py-2 text-md hover:font-black">
                       Home
                     </a>
                   </Link>
@@ -50,14 +43,36 @@ function Navbar(props) {
                     offset={50}
                     duration={500}
                   >
-                    <a className="cursor-pointer hover:bg-teal-600 text-black hover:text-white px-3 py-2 rounded-md text-md font-semi">
+                    <a className="cursor-pointer text-black font-medium hover:font-semibold px-3 py-2 text-md hover:text-teal-600">
                       About
                     </a>
                   </Link>
 
-                  <PatientDropDown />
-                  <DoctorDropDown />
+                  <Link
+                    href="/login"
+                    activeClass="contact"
+                    to="contact"
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                  >
+                    <a className="cursor-pointer text-black font-medium hover:font-semibold px-3 py-2 text-md hover:text-teal-600">
+                      Login
+                    </a>
+                  </Link>
 
+                  <Link
+                    href="/registration"
+                    activeClass="contact"
+                    to="contact"
+                    smooth={true}
+                    offset={50}
+                    duration={500}
+                  >
+                    <a className="cursor-pointer text-black font-medium hover:font-semibold px-3 py-2 text-md hover:text-teal-600">
+                      Sign Up
+                    </a>
+                  </Link>
                   <Link
                     href="/contactUs"
                     activeClass="contact"
@@ -73,7 +88,7 @@ function Navbar(props) {
                 </div>
               </div>
             </div>
-            <div className="mr-10 flex md:hidden ">
+            <div className=" mr-2 md:mr-10 flex md:hidden ">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
@@ -155,40 +170,36 @@ function Navbar(props) {
                   offset={50}
                   duration={500}
                 >
-                  <a className="cursor-pointer hover:bg-teal-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+                  <a className="cursor-pointer text-black font-medium px-3 py-2 block text-md hover:text-teal-600">
                     About
                   </a>
                 </Link>
 
-                {/* <Link
-                  href="/patient"
-                  activeClass="patient"
-                  to="patient"
-                  smooth={true}
-                  offset={50}
-                  duration={500}
-                  className="cursor-pointer hover:bg-teal-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                >
-                  <a className="cursor-pointer hover:bg-teal-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                    Patient
-                  </a>
-                </Link> */}
-                <PatientDropDown />
-
-                <DoctorDropDown />
-
-                {/* <Link
-                  href="/doctor"
-                  activeClass="doctor"
-                  to="doctor"
+                <Link
+                  href="/login"
+                  activeClass="contact"
+                  to="contact"
                   smooth={true}
                   offset={50}
                   duration={500}
                 >
-                  <a className="cursor-pointer hover:bg-teal-600 text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium">
-                    Doctor
+                  <a className="cursor-pointer text-black font-medium block  hover:font-semibold px-3 py-2 text-md hover:text-teal-600">
+                    Login
                   </a>
-                </Link> */}
+                </Link>
+
+                <Link
+                  href="/registration"
+                  activeClass="contact"
+                  to="contact"
+                  smooth={true}
+                  offset={50}
+                  duration={500}
+                >
+                  <a className="cursor-pointer text-black font-medium block  hover:font-semibold px-3 py-2 text-md hover:text-teal-600">
+                    Sign Up
+                  </a>
+                </Link>
 
                 <Link
                   href="/admin"
@@ -207,7 +218,7 @@ function Navbar(props) {
           )}
         </Transition>
       </nav>
-    </div>
+    </section>
   );
 }
 

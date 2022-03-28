@@ -1,6 +1,7 @@
 import Head from "next/head";
 import LoginForm from "../components/login/login_form";
-export default function DoctorLogin() {
+
+export default function Login() {
   return (
     <section>
       <Head>

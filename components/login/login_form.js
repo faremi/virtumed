@@ -16,16 +16,20 @@ function LoginForm(params) {
   const [email, setEmail] = useState("");
   const [pasword, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState("");
 
   function handleEmail(a) {
+    setError("");
     setEmail(a.target.value);
   }
   const handlePassword = (a) => {
+    setError("");
     setPassword(a.target.value);
   };
   async function loginUser(a) {
     a.preventDefault();
     try {
+      setLoading("Loading");
       const user = await apolloClient.query({
         query: LOGIN_USER,
         variables: {
@@ -34,9 +38,11 @@ function LoginForm(params) {
         },
       });
       setError(user.data.users.message);
+      setLoading("");
       console.log(user);
     } catch (e) {
       console.log("Working");
+      setLoading("");
       return setError("Unable to process request");
     }
   }
@@ -67,6 +73,7 @@ function LoginForm(params) {
               />
             </div>
             <div className="my-2 text-xl text-red-500">{error}</div>
+            <div className="my-2 text-xl text-green-500">{loading}</div>
             <button
               onClick={loginUser}
               type="submit"
