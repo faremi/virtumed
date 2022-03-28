@@ -7,30 +7,29 @@ function AboutUsBody(props) {
   return (
     <section className="lg:mx-40 font-sans">
       <div className="pt-32  mb-10">
-        {/* <div className="w-full rounded-lg"> */}
         <Image
           className="w-full rounded-lg"
           src={image}
           layout="responsive"
           alt="image"
         />
-        {/* </div> */}
-        {/* <img  src="/../../doctor_image.jpg"></img> */}
       </div>
-      <div className="flex mb-10">
-        Culpa esse architecto ad earum ut iusto mollitia omnis. Ratione
-        consequatur veritatis error quasi nobis itaque et aut porro. Sed
-        doloribus itaque et velit deserunt. Quo explicabo recusandae voluptas
-        rerum itaque sint facilis vitae autem.Odit culpa minus perferendis enim
-        esse. Numquam molestias dolorem voluptatem. Veniam perspiciatis sed.
-        Voluptatem nihil possimus nihil blanditiis delectus. Dolorem sit fuga
-        eos quibusdam neque. Impedit ex eligendi quis corporis voluptatem qui
-        quisquam possimus distinctio. Voluptas ipsam vero tenetur facere sit et
-        sit. Incidunt consequatur nulla. In qui non in dolor dolorem quisquam
-        autem. Velit dignissimos dicta voluptas dolorum nemo commodi quisquam
-        perspiciatis animi. Perferendis officiis occaecati iste. Praesentium
-        eveniet dolorem voluptates consequatur nulla. Aliquam voluptatem nam
-        tenetur.
+      <div className="flex justify-center mb-10">
+        <p className="p-2 text-md md:text-xl font-light">
+          Culpa esse architecto ad earum ut iusto mollitia omnis. Ratione
+          consequatur veritatis error quasi nobis itaque et aut porro. Sed
+          doloribus itaque et velit deserunt. Quo explicabo recusandae voluptas
+          rerum itaque sint facilis vitae autem.Odit culpa minus perferendis
+          enim esse. Numquam molestias dolorem voluptatem. Veniam perspiciatis
+          sed. Voluptatem nihil possimus nihil blanditiis delectus. Dolorem sit
+          fuga eos quibusdam neque. Impedit ex eligendi quis corporis voluptatem
+          qui quisquam possimus distinctio. Voluptas ipsam vero tenetur facere
+          sit et sit. Incidunt consequatur nulla. In qui non in dolor dolorem
+          quisquam autem. Velit dignissimos dicta voluptas dolorum nemo commodi
+          quisquam perspiciatis animi. Perferendis officiis occaecati iste.
+          Praesentium eveniet dolorem voluptates consequatur nulla. Aliquam
+          voluptatem nam tenetur.
+        </p>
       </div>
       <div className="flex flex-col p-8 h-36 bg-teal-50 rounded-2xl">
         <h2>Our Mission</h2>
