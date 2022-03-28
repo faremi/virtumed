@@ -1,6 +1,6 @@
 import Head from "next/head";
+import PatientRegistrationForm from "../components/registration/registration_form";
 
-import PatientRegistrationForm from "../components/registration/patient_registration_form";
 export default function Registration() {
   return (
     <section>

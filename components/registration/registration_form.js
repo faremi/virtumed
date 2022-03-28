@@ -1,4 +1,3 @@
-import styles from "../../styles/Form.module.css";
 import { CustomTextForm } from "../textForm";
 
 function PatientRegistrationForm(params) {
