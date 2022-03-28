@@ -15,7 +15,7 @@ function AboutUsBody(props) {
         />
       </div>
       <div className="flex justify-center mb-10">
-        <p className="p-2 text-md md:text-xl font-light">
+        <p className="p-2 text-md md:text-xl font-light leading-10 tracking-wider">
           Culpa esse architecto ad earum ut iusto mollitia omnis. Ratione
           consequatur veritatis error quasi nobis itaque et aut porro. Sed
           doloribus itaque et velit deserunt. Quo explicabo recusandae voluptas

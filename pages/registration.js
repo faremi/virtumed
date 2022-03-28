@@ -1,8 +1,5 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import Footers from "../components/footer";
-import Navbar from "../components/nav_bar";
-import DoctorForm from "../components/registration/doctor_body";
+
 import PatientRegistrationForm from "../components/registration/patient_registration_form";
 export default function Registration() {
   return (
