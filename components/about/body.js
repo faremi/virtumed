@@ -32,14 +32,14 @@ function AboutUsBody(props) {
         </p>
       </div>
       <div className="flex flex-col p-8 h-36 bg-teal-50 rounded-2xl">
-        <h2>Our Mission</h2>
+        <h2 className="text-teal-500 text-2xl mb-2">Our Mission</h2>
         <p className="flex">
           Deserunt rem est corporis hic alias ut.Deserunt rem est corporis hic
           alias ut .
         </p>
       </div>
       <div className="flex flex-col p-8 h-36 bg-teal-50 rounded-2xl mb-10">
-        <h2>Our Mission</h2>
+        <h2 className="text-teal-500 text-2xl mb-2">Our Mission</h2>
         <p className="flex">
           Deserunt rem est corporis hic alias ut.Deserunt rem est corporis hic
           alias ut .
@@ -55,54 +55,48 @@ function AboutUsBody(props) {
           />
           {/* <img alt="imagess" className="" src="/../../item1.jpeg"></img> */}
         </div>
-        <div className="">
+        <div className="p-4">
           <div className="flex mb-4 align-middle">
-            <p className="text-xl ">
-              <strong className="text-teal-500">Service</strong>- We strive to
-              Accusantium porro quae velit sit. Corrupti dolorum qui. Et aut
-              delectus et omnis rerum veritatis vel error.
+            <p className="text-xl font-light">
+              <strong className="text-teal-500 font-semibold">Service</strong>-
+              We strive to Accusantium porro quae velit sit. Corrupti dolorum
+              qui. Et aut delectus et omnis rerum veritatis vel error.
             </p>
           </div>
           <div className="flex mb-4 align-middle">
-            <p className="text-xl ">
-              <strong className="text-teal-500">Service</strong>- We strive to
-              anticipate and meet the needs of our patients, physicians, and
-              co-worker
+            <p className="text-xl font-light">
+              <strong className="text-teal-500 font-semibold">Service</strong>-
+              We strive to anticipate and meet the needs of our patients,
+              physicians, and co-worker
             </p>
           </div>
           <div className="flex mb-4 align-middle">
-            <p className="text-xl ">
-              <strong className="text-teal-500">Service</strong>- We strive to
-              anticipate and meet the needs of our patients, physicians, and
-              co-worker
+            <p className="text-xl font-light">
+              <strong className="text-teal-500 font-semibold">Service</strong>-
+              We strive to anticipate and meet the needs of our patients,
+              physicians, and co-worker
             </p>
           </div>
           <div className="flex mb-4 align-middle">
-            <p className="text-xl ">
-              <strong className="text-teal-500">Service</strong>- We strive to
-              anticipate and meet the needs of our patients, physicians, and
-              co-worker
+            <p className="text-xl font-light">
+              <strong className="text-teal-500 font-semibold">Service</strong>-
+              We strive to anticipate and meet the needs of our patients,
+              physicians, and co-worker
             </p>
           </div>
           <div className="flex mb-4 align-middle">
-            <p className="text-xl ">
-              <strong className="text-teal-500">Service</strong>- We strive to
-              anticipate and meet the needs of our patients, physicians, and
-              co-worker
+            <p className="text-xl font-light">
+              <strong className="text-teal-500 font-semibold">Service</strong>-
+              We strive to anticipate and meet the needs of our patients,
+              physicians, and co-worker
             </p>
           </div>
+
           <div className="flex mb-4 align-middle">
-            <p className="text-xl ">
-              <strong className="text-teal-500">Service</strong>- We strive to
-              anticipate and meet the needs of our patients, physicians, and
-              co-worker
-            </p>
-          </div>
-          <div className="flex mb-4 align-middle">
-            <p className="text-xl ">
-              <strong className="text-teal-500">Service</strong>- We strive to
-              anticipate and meet the needs of our patients, physicians, and
-              co-worker
+            <p className="text-xl font-light">
+              <strong className="text-teal-500 font-semibold">Service</strong>-
+              We strive to anticipate and meet the needs of our patients,
+              physicians, and co-worker
             </p>
           </div>
         </div>

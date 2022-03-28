@@ -3,16 +3,15 @@ function HomeBody() {
   return (
     <section className="font-sans">
       <div className="items-center font-sans pt-10 justify-center  "></div>
+      <div className="h-16 my-24"></div>
       <div className="flex justify-center align-middle my-14  lg:mx-28 flex-col-reverse lg:flex-row xl:flex-row md:flex-row">
         <div className={styles.col1}>
-          <p className={styles.topTitle}> -------- ex sit libero</p>
-          <h1>etempora oditt etemp ora oditt</h1>
+          <h1 className="">Welcome to VirtuMed</h1>
           <p>
-            Ullam est voluptas autem ea a et ut. Et soluta iste laborum. Ea
-            dolorem alias necessitatibus recusandae ut et eligendi. Laborum qui
-            hic maiores aperiam autem enim autem consequuntur. Aut est
-            accusantium eum quae doloribus voluptate sed velit. Aut dolores iure
-            esse eius quia facilis quibusdam cupiditate odio.
+            Our medical platform is dedicated to providing high quality virtual
+            health care services to patients from a diverse team of highly
+            qualified doctors. We aspire to provide accessible, affordable and
+            quality health care services to all.
           </p>
           <button
             //   onClick={() => setIsOpen(!isOpen)}

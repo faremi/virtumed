@@ -51,13 +51,23 @@ function PatientRegistrationForm(params) {
                 type="password"
                 placeholder="Confirm your password"
               />
+              <div className="flex flex-row my-4">
+                <input
+                  type="checkbox"
+                  className=" checked:bg-teal-500 mt-1 mr-5"
+                />
+
+                <label className="ml-3 ">
+                  Are your registering as a medical doctor?
+                </label>
+              </div>
             </div>
             <button
               // onClick={loginUser}
               type="submit"
               className="bg-gradient-to-r  from-teal-200 to-cyan-200 hover:bg-gradient-to-r  hover:from-teal-500 hover:to-cyan-500 py-2 px-4 rounded w-full mt-2"
             >
-              Login
+              Registrat
             </button>
           </form>
         </div>

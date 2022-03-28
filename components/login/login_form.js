@@ -14,9 +14,10 @@ let LOGIN_USER = gql`
 `;
 function LoginForm(params) {
   const [email, setEmail] = useState("");
+
   const [pasword, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState("");
+  const [loading, setLoading] = useState(false);
 
   function handleEmail(a) {
     setError("");
@@ -29,7 +30,7 @@ function LoginForm(params) {
   async function loginUser(a) {
     a.preventDefault();
     try {
-      setLoading("Loading");
+      setLoading(true);
       const user = await apolloClient.query({
         query: LOGIN_USER,
         variables: {
@@ -38,11 +39,11 @@ function LoginForm(params) {
         },
       });
       setError(user.data.users.message);
-      setLoading("");
+      setLoading(false);
       console.log(user);
     } catch (e) {
       console.log("Working");
-      setLoading("");
+      setLoading(false);
       return setError("Unable to process request");
     }
   }
