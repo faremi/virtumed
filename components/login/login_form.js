@@ -14,11 +14,24 @@ let LOGIN_USER = gql`
 `;
 function LoginForm(params) {
   const [email, setEmail] = useState("");
-
-  const [pasword, setPassword] = useState("");
+  const [validateEmail, setValidateEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [validatePassword, setValidatePassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-
+  function validateEmailAddresss(mail) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+      return true;
+    }
+    alert("You have entered an invalid email address!");
+    return false;
+  }
+  function validateUserPassword(passwords) {
+    if (passwords.length > 6) {
+      return true;
+    }
+    return false;
+  }
   function handleEmail(a) {
     setError("");
     setEmail(a.target.value);
@@ -29,22 +42,30 @@ function LoginForm(params) {
   };
   async function loginUser(a) {
     a.preventDefault();
-    try {
-      setLoading(true);
-      const user = await apolloClient.query({
-        query: LOGIN_USER,
-        variables: {
-          email: email,
-          password: pasword,
-        },
-      });
-      setError(user.data.users.message);
-      setLoading(false);
-      console.log(user);
-    } catch (e) {
-      console.log("Working");
-      setLoading(false);
-      return setError("Unable to process request");
+    if (!validateEmailAddresss(email)) {
+      return setValidateEmail("Enter a valid email address");
+    } else if (!validateUserPassword(password)) {
+      return setValidatePassword("Enter password with more than 6 characters");
+    } else {
+      setValidateEmail("");
+      setValidatePassword("");
+      try {
+        setLoading(true);
+        const user = await apolloClient.query({
+          query: LOGIN_USER,
+          variables: {
+            email: email,
+            password: password,
+          },
+        });
+        setError(user.data.users.message);
+        setLoading(false);
+        console.log(user);
+      } catch (e) {
+        console.log("Working");
+        setLoading(false);
+        return setError("Unable to process request");
+      }
     }
   }
   return (
@@ -61,12 +82,14 @@ function LoginForm(params) {
           <form action="#">
             <div className="flex flex-col align-middle">
               <CustomTextForm
+                message={validateEmail}
                 handler={handleEmail}
                 label="Email"
                 type="email"
                 placeholder="Enter your email address"
               />
               <CustomTextForm
+                message={validatePassword}
                 handler={handlePassword}
                 label="Password"
                 type="password"

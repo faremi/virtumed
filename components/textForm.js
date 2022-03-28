@@ -1,4 +1,4 @@
-export function CustomTextForm({ handler, type, placeholder, label }) {
+export function CustomTextForm({ handler, type, placeholder, label, message }) {
   return (
     <div className="my-2">
       <span className="block mb-1 font-medium">{label}</span>
@@ -12,6 +12,7 @@ export function CustomTextForm({ handler, type, placeholder, label }) {
         placeholder={placeholder}
         required
       />
+      <p className=" text-red-600 text-sm my-1 ">{message}</p>
     </div>
   );
 }
