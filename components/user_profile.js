@@ -1,6 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import docImage from "../public/doctor.png";
-export default function UserProfile() {
+export default function UserProfile({ params }) {
   return (
     <div className="xl:row-span-2 col-span-2 bg-white font-sans  xl:mt-20">
       <div className="rounded-2xl border shadow h-full bg-white ">
@@ -21,17 +22,37 @@ export default function UserProfile() {
         </div>
         <div className="m-6 md:m-10">
           <h1 className="text-2xl mb-4">Personal Information</h1>
-          <TextInformationBar title="First Name" subTitle="John" />
-          <TextInformationBar title="Second Name" subTitle="Dae" />
-          <TextInformationBar title="Cell Phone" subTitle="202-3873-93838" />
-          <TextInformationBar title="E-mail" subTitle="goodbye@gmail.com" />
-          <TextInformationBar title="ID Number" subTitle="8993938849" />
+          <TextInformationBar
+            title="First Name"
+            subTitle={params.profile.firstName}
+          />
+          <TextInformationBar
+            title="Last Name"
+            subTitle={params.profile.lastName}
+          />
+          <TextInformationBar
+            title="Cell Phone"
+            subTitle={params.profile.phoneNumber}
+          />
+          <TextInformationBar title="E-mail" subTitle={params.user.email} />
+          <TextInformationBar title="ID Number" subTitle={params.profile.id} />
           <TextInformationBar title="Age" subTitle="32" />
-          <TextInformationBar title="Gender" subTitle="Male" />
-          <TextInformationBar title="Next of Kin" subTitle="Mathew Malun" />
+          <TextInformationBar title="Gender" subTitle={params.profile.gender} />
           <TextInformationBar
             title="Address"
-            subTitle="32, Manzini Street, Swazilamd. "
+            subTitle={params.profile.address}
+          />
+          <TextInformationBar
+            title="Next of Kin"
+            subTitle={params.profile.nextOfKin}
+          />
+          <TextInformationBar
+            title="Next of Kin Phone Number"
+            subTitle={params.profile.nextOfKinNumber}
+          />
+          <TextInformationBar
+            title="Next of Kin Address"
+            subTitle={params.profile.nextOfKinAddress}
           />
         </div>
         <div className="m-6 md:m-10">
@@ -55,12 +76,11 @@ function ButtonBar() {
   return (
     <div className="xl:flex xl:justify-center m-3">
       <div className="xl:m-auto flex flex-row space-x-3">
-        <button className="bg-teal-500 w-72 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded min-w-fit">
-          Check Profile
-        </button>
-        <button className="bg-transparent w-72 hover:bg-teal-500 text-teal-700 font-semibold hover:text-white py-2 px-4 border border-teal-500 hover:border-transparent rounded">
-          Update Profile
-        </button>
+        <Link href="/updateProfile" className="">
+          <div className="bg-teal-500 w-full hover:bg-teal-700 text-white font-bold py-2 px-4 rounded min-w-fit">
+            Update Profile
+          </div>
+        </Link>
       </div>
     </div>
   );

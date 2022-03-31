@@ -1,4 +1,17 @@
-export default function InfoTable() {
+import Link from "next/link";
+import cookieCutter from "cookie-cutter";
+import { useRouter } from "next/router";
+
+export default function InfoTable({ params }) {
+  console.log(params);
+  let value = [
+    {
+      type: "DOCTOR",
+    },
+  ];
+  if (params.lenght > 1) {
+    value = params;
+  }
   return (
     <div className="flex flex-col font-sans">
       <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -11,64 +24,38 @@ export default function InfoTable() {
                     scope="col"
                     className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                   >
-                    #
+                    Type
                   </th>
+
                   <th
                     scope="col"
                     className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                   >
-                    First
+                    Email
                   </th>
+
+                  {value[0].type != "PATIENT" ? (
+                    <th
+                      scope="col"
+                      className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
+                    >
+                      Speciality
+                    </th>
+                  ) : (
+                    ""
+                  )}
                   <th
                     scope="col"
                     className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                   >
-                    Last
-                  </th>
-                  <th
-                    scope="col"
-                    className="text-sm font-medium text-gray-900 px-6 py-4 text-left"
-                  >
-                    Handle
+                    Action
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b">
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    1
-                  </td>
-                  <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    Mark
-                  </td>
-                  <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    Otto
-                  </td>
-                  <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    @mdo
-                  </td>
-                </tr>
-                <tr className="bg-white border-b">
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    2
-                  </td>
-                  <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    Jacob
-                  </td>
-                  <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    Thornton
-                  </td>
-                  <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                    @fat
-                  </td>
-                </tr>
-
-                <TableRowItem />
-                <TableRowItem />
-                <TableRowItem />
-                <TableRowItem />
-                <TableRowItem />
-                <TableRowItem />
+                {params.map(function (d, idx) {
+                  return <TableRowItem key={d} prop={d} />;
+                })}
               </tbody>
             </table>
           </div>
@@ -78,20 +65,38 @@ export default function InfoTable() {
   );
 }
 
-function TableRowItem() {
+function TableRowItem({ prop }) {
+  const router = useRouter();
+
+  function oncliks(a) {
+    a.preventDefault();
+    console.log("ajdhhffjfj");
+    router.push("/message");
+    cookieCutter.set("account", prop.type);
+    return cookieCutter.set("account2", prop.other);
+  }
   return (
     <tr className="bg-white border-b">
-      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-        3
+      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+        {prop.type}
       </td>
       <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-        Larry
+        {prop.type != "PATIENT" ? prop.otherEmail : prop.userEmail}
       </td>
+
+      {prop.type != "PATIENT" ? (
+        <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+          {prop.speciality}
+        </td>
+      ) : (
+        ""
+      )}
       <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-        Wild
-      </td>
-      <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-        @twitter
+        <button onClick={oncliks}>
+          <a>
+            <div className=" text-red-500">Chat With</div>
+          </a>
+        </button>
       </td>
     </tr>
   );

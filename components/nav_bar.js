@@ -24,7 +24,7 @@ function Navbar(props) {
               <div className="hidden md:block mr-20 lg:mr-40 mx-20">
                 <div className="ml-10 flex items-baseline space-x-5">
                   <Link
-                    href="/"
+                    href="/message"
                     activeClass="Home"
                     to="about"
                     smooth={true}

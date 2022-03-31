@@ -7,9 +7,6 @@ function createUsersArgument() {
     firstName: nonNull(stringArg()),
     lastName: nonNull(stringArg()),
     phoneNumber: nonNull(stringArg()),
-    region: stringArg(),
-    experience: stringArg(),
-    speciality: stringArg(),
     accountType: nonNull(stringArg()),
   };
 }
@@ -24,12 +21,15 @@ function createNewUserWithDB(ctx, args, hashedPw) {
           firstName: args.firstName,
           lastName: args.lastName,
           phoneNumber: args.phoneNumber,
-          region: args.region,
-          experience: args.experience,
-          speciality: args.speciality,
           accountType: args.accountType,
         },
       },
+      payment: {
+        create: {
+          balance: 0,
+        },
+      },
+      messageUser: {},
     },
   });
 }

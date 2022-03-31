@@ -17,20 +17,78 @@ model Message {
 }
 
 model Profile {
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
-  accountType String
-  firstName   String
-  lastName    String
-  phoneNumber String
-  userId      String @db.ObjectId
+  id               String      @id @default(auto()) @map("_id") @db.ObjectId
+  accountType      String?
+  firstName        String
+  lastName         String
+  phoneNumber      String
+  region           Region?
+  address          String?
+  nextOfKin        String?
+  nextOfKinNumber  String?
+  nextOfKinAddress String?
+  gender           String?
+  experience       String?
+  speciality       Speciality?
+  user             User        @relation(fields: [userId], references: [id])
+  userId           String      @unique
 }
 
-model Testss {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+model Payment {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  balance Int?
+  user    User   @relation(fields: [userId], references: [id])
+  userId  String @unique
+}
+
+model PaymentDetails {
+  id          String       @id @default(auto()) @map("_id") @db.ObjectId
+  createdAt   DateTime     @default(now())
+  amount      Int
+  paymentId   String       @db.ObjectId
+  paymentType PaymentType?
 }
 
 model User {
-  id       String @id @default(auto()) @map("_id") @db.ObjectId
-  email    String @unique
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  email    String   @unique
   password String
+  profile  Profile?
+  payment  Payment?
+  messageUser MessageUser[] 
+}
+
+model MessageUser {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  other String  @db.ObjectId @unique
+user    User   @relation(fields: [userId], references: [id])
+  userId  String @unique @db.ObjectId
+  otherEmail String?
+  userEmail String?
+  speciality String?
+
+}
+
+enum PaymentType {
+  Withdraw
+  Deposit
+}
+
+enum Region {
+  Manzini
+  Hhohho
+  Lubombo
+  Shiselweni
+}
+
+enum Speciality {
+  GeneralPathologist
+  FamilyPhysician
+  Pediatrician
+  Dermatology
+  Othropedic
+  Gastroenterologist
+  Neurologist
+  Radiologist
+  Phychiatrist
 }

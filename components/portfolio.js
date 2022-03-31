@@ -1,7 +1,9 @@
 import { DocumentReportIcon, CashIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 
-export default function Portfolio() {
+export default function Portfolio({ params }) {
+  console.log(params);
+
   return (
     <div className="col-span-2 font-sans row-end-1 bg-grey-10 xl:mb-4 flex align-middle justify-center flex-col h-64 md:h-80 xl:mt-20">
       <div className="container bg-gradient-to-r from-teal-500 to-cyan-500 h-2/3 xl:w-5/6 m-auto rounded-lg drop-shadow p-6 flex justify-center">
@@ -9,7 +11,7 @@ export default function Portfolio() {
           <h1>My Portfolio</h1>
         </div>
         <div className="absolute text-white mt-8 text-3xl left-0 mx-5 ">
-          <h1>R20,3000</h1>
+          <h1>R {params.balance} : 00</h1>
         </div>
         <div className=" m-auto absolute  -bottom-1/4 h-12  mb-7">
           <div className="flex flex-row h-full w-full">

@@ -3,7 +3,7 @@ function HomeBody() {
   return (
     <section className="font-sans">
       <div className="items-center font-sans pt-10 justify-center  "></div>
-      <div className="h-16 my-24"></div>
+      <div className="h-6 my-7 md:my-16"></div>
       <div className="flex justify-center align-middle my-14  lg:mx-28 flex-col-reverse lg:flex-row xl:flex-row md:flex-row">
         <div className={styles.col1}>
           <h1 className="">Welcome to VirtuMed</h1>

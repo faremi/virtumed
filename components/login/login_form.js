@@ -2,7 +2,8 @@ import { useState } from "react";
 import { CustomTextForm } from "../textForm";
 import apolloClient from "../../lib/apollo";
 import { gql } from "@apollo/client";
-
+import { useRouter } from "next/router";
+import cookieCutter from "cookie-cutter";
 let LOGIN_USER = gql`
   query Query($email: String!, $password: String!) {
     users(email: $email, password: $password) {
@@ -40,6 +41,7 @@ function LoginForm(params) {
     setError("");
     setPassword(a.target.value);
   };
+  const router = useRouter();
   async function loginUser(a) {
     a.preventDefault();
     if (!validateEmailAddresss(email)) {
@@ -60,7 +62,12 @@ function LoginForm(params) {
         });
         setError(user.data.users.message);
         setLoading(false);
-        console.log(user);
+        console.log(user.data.users.code);
+
+        if (user.data.users.code === 1) {
+          cookieCutter.set("myCookieName", user.data.users.id);
+          router.push("/admin");
+        }
       } catch (e) {
         console.log("Working");
         setLoading(false);

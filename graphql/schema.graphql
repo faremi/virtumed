@@ -2,11 +2,55 @@
 ### Do not make changes to this file directly
 
 
+type Message {
+  accountType: String
+  content: String
+  id: String
+  userId: String
+}
+
 type Mutation {
-  users(accountType: String!, email: String!, experience: String, firstName: String!, lastName: String!, password: String!, phoneNumber: String!, region: String, speciality: String): Response!
+  messages(accountType: String!, messages: String!, patientId: String!, userId: String!): String!
+  updatePayment(amount: Int, id: String!): Response!
+  updateProfile(address: String, experience: String, gender: String, id: String!, nextOfKin: String, nextOfKinAddress: String, nextOfKinNumber: String, region: String, speciality: String): Response!
+  users(accountType: String!, email: String!, firstName: String!, lastName: String!, password: String!, phoneNumber: String!): Response!
+  withdrawPayment(amount: Int, id: String!): Response!
+}
+
+type Payment {
+  balance: String
+  id: String
+  userId: String
+}
+
+type PaymentDetails {
+  amount: String
+  createdAt: String
+  id: String
+  paymentId: String
+  paymentType: String
+}
+
+type Profile {
+  accountType: String
+  address: String
+  experience: String
+  firstName: String
+  gender: String
+  id: String
+  lastName: String
+  nextOfKin: String
+  nextOfKinAddress: String
+  nextOfKinNumber: String
+  phoneNumber: String
+  region: String
+  speciality: String
+  userId: String
 }
 
 type Query {
+  messages(patientId: String!, userId: String!): [Message]!
+  userInformation(id: String!): UserInformation!
   users(email: String!, password: String!): Response!
 }
 
@@ -19,5 +63,25 @@ type Response {
 type User {
   email: String
   id: String
+  messageUser: [messageString]
   password: String
+}
+
+type UserInformation {
+  doctorList: [messageString]
+  messageList: [messageString]
+  payment: Payment
+  paymentList: [PaymentDetails]
+  profile: Profile
+  user: User
+}
+
+type messageString {
+  id: String
+  other: String
+  otherEmail: String
+  speciality: String
+  type: String
+  userEmail: String
+  userId: String
 }
