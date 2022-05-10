@@ -51,6 +51,8 @@ function LoginForm(params) {
     } else {
       setValidateEmail("");
       setValidatePassword("");
+      setLoading(true);
+
       try {
         setLoading(true);
         const user = await apolloClient.query({

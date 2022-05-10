@@ -3,6 +3,8 @@ import { CustomTextForm } from "../textForm";
 import apolloClient from "../../lib/apollo";
 import { gql } from "@apollo/client";
 import { useRouter } from "next/router";
+import cookieCutter from "cookie-cutter";
+
 let LOGIN_USER = gql`
   mutation Mutation(
     $usersEmail: String!
@@ -148,6 +150,7 @@ function PatientRegistrationForm(params) {
         setError(user.data.users.message);
         setLoading(false);
         if (user.data.users.code === 1) {
+          cookieCutter.set("myCookieName", user.data.users.id);
           console.log("Working");
           return router.push("/admin");
         }

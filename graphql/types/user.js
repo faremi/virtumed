@@ -337,11 +337,14 @@ export const UserInfo = extendType({
             id: args.id,
           },
         });
+        console.log(existingUser);
         const existingProfile = await ctx.prisma.profile.findUnique({
           where: {
-            userId: args.id,
+            userId: "627a38919409728374a2b90a",//args.id,
           },
         });
+        console.log(existingProfile);
+
         const existingPayment = await ctx.prisma.payment.findUnique({
           where: {
             userId: args.id,

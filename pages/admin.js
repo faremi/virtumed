@@ -80,12 +80,17 @@ export async function getServerSideProps({ res, req }) {
   });
   const cookies = new Cookies(req, res);
   let valuess = cookies.get("myCookieName");
+
+  // let valuess = '627a38919409728374a2b90a';
   const data = await apolloClient.query({
     query: USER_INFO,
     variables: {
       userInformationId: valuess,
     },
   });
+
+
+  console.log(data);
   return {
     props: {
       data,
